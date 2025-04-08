@@ -1,6 +1,10 @@
 from datasets import load_dataset
 import pandas as pd
 import json
+import os
+from huggingface_hub import create_repo
+from huggingface_hub import upload_file
+
 
 def data_load(fp):
     data = []
@@ -9,6 +13,7 @@ def data_load(fp):
             data.append(json.loads(line))
     df = pd.DataFrame(data)
     return df
+
 
 def add_prompt(df):
     prompts = []
@@ -27,46 +32,39 @@ def add_prompt(df):
     df["prompt"] = prompts
     return df
 
+
 def data_convert(fp_in, fp_out):
     df = data_load(fp_in)
     df = add_prompt(df)
     df.to_json(fp_out, orient="records", lines=True, force_ascii=False)
-
-# fp_in = "/home/xp83/Documents/project/data/syn1_dpo/cleveland/cleveland.pref.jsonl"
-# fp_out = "/home/xp83/Documents/project/data/syn1_dpo/cleveland.jsonl"
-# data_convert(fp_in, fp_out)
-# fp_in = "/home/xp83/Documents/project/data/syn1_dpo/hungarian/hungarian.pref.jsonl"
-# fp_out = "/home/xp83/Documents/project/data/syn1_dpo/hungarian.jsonl"
-# data_convert(fp_in, fp_out)
-# fp_in = "/home/xp83/Documents/project/data/syn1_dpo/switzerland/switzerland.pref.jsonl"
-# fp_out = "/home/xp83/Documents/project/data/syn1_dpo/switzerland.jsonl"
-# data_convert(fp_in, fp_out)
-# fp_in = "/home/xp83/Documents/project/data/syn1_dpo/va/va.pref.jsonl"
-# fp_out = "/home/xp83/Documents/project/data/syn1_dpo/va.jsonl"
-# data_convert(fp_in, fp_out)
+    return df
 
 
+dir = "/home/xpeng3/SynFed/syned_datasets/syn1_dpo"
+for df_name in ["cleveland", "hungarian", "switzerland", "va"]:
+    # data convert
+    fp_in = os.path.join(dir, f"{df_name}/{df_name}.pref.jsonl")
+    fp_out = os.path.join(dir, f"{df_name}.jsonl")
+    df = data_convert(fp_in, fp_out)
 
-# List your input and output JSONL files
-input_files = [
-    '/home/xp83/Documents/project/data/syn1_dpo/cleveland.jsonl', 
-    '/home/xp83/Documents/project/data/syn1_dpo/hungarian.jsonl', 
-    '/home/xp83/Documents/project/data/syn1_dpo/switzerland.jsonl', 
-    '/home/xp83/Documents/project/data/syn1_dpo/va.jsonl'
-]
-output_file = '/home/xp83/Documents/project/data/syn1_dpo/combined.jsonl'
+    # upload to huggingface
+    repo_id = f"TheFinAI/syn1_dpo_{df_name}"
 
-# Open the output file in write mode
-with open(output_file, 'w', encoding='utf-8') as outfile:
-    for file in input_files:
-        with open(file, 'r', encoding='utf-8') as infile:
-            for line in infile:
-                # Ensure each line is stripped and re-dumped as JSON for formatting consistency
-                data = json.loads(line)
-                json.dump(data, outfile)
-                outfile.write('\n')
+    print(f"* creating or overwriting {repo_id}!")
+    create_repo(repo_id, repo_type="dataset", exist_ok=True)
 
-print(f"Combined {len(input_files)} files into '{output_file}'")
+    print(f"* uploading to {repo_id}!")
+    upload_file(
+        path_or_fileobj=fp_out,
+        path_in_repo="train.jsonl",
+        repo_id=repo_id,
+        repo_type="dataset"
+    )
+
+
+
+
+
 
 
 
