@@ -47,3 +47,4 @@ timm==1.0.12
 torchmetrics==1.6.0
 pycocotools==2.0.8
 sentence-transformers==3.3.1
+triton==3.0.0

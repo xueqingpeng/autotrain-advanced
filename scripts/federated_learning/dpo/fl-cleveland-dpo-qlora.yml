@@ -1,0 +1,36 @@
+task: llm-dpo
+base_model: Qwen/Qwen2.5-3B
+project_name: fl-cleveland-dpo-qlora
+log: tensorboard
+backend: local
+
+data:
+  path: TheFinAI/syn1_dpo_cleveland
+  train_split: train
+  valid_split: null
+  chat_template: tokenizer
+  column_mapping:
+    text_column: chosen
+    rejected_text_column: reject
+    prompt_text_column: prompt
+
+params:
+  block_size: 256
+  model_max_length: 42000
+  max_prompt_length: 512
+  epochs: 1
+  batch_size: 1
+  lr: 5e-4
+  peft: true
+  quantization: int4
+  target_modules: all-linear
+  padding: right
+  optimizer: adamw_torch
+  scheduler: cosine
+  gradient_accumulation: 4
+  mixed_precision: bf16
+
+hub:
+  username: ${HF_USERNAME}
+  token: ${HF_TOKEN}
+  push_to_hub: true
