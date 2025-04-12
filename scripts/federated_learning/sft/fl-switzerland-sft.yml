@@ -1,11 +1,11 @@
 task: llm-sft
 base_model: Qwen/Qwen2.5-3B
-project_name: fl-cleveland-sft
+project_name: fl-switzerland-sft-2
 log: tensorboard
 backend: local
 
 data:
-  path: 
+  path: TheFinAI/MED_SYN2_SWITZERLAND_train
   train_split: train
   valid_split: null
   chat_template: tokenizer
@@ -19,9 +19,9 @@ params:
   batch_size: 1
   lr: 0.0005
   peft: true
-  # lora_r: 16
-  # lora_alpha: 32
-  # lora_dropout: 0
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0
   quantization: int4
   target_modules: all-linear
   padding: right

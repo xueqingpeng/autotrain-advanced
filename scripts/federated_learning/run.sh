@@ -14,4 +14,9 @@ export CUDA_VISIBLE_DEVICES=4,5,6,7
 # autotrain --config dpo/fl-switzerland-dpo-qlora.yml
 # autotrain --config dpo/fl-va-dpo-qlora.yml
 
-bash merge.sh
+# bash merge.sh
+
+autotrain --config sft/fl-cleveland-sft.yml
+autotrain --config sft/fl-hungarian-sft.yml
+autotrain --config sft/fl-switzerland-sft.yml
+autotrain --config sft/fl-va-sft.yml
