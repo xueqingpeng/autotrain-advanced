@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --job-name=autotrain_dpo
+#SBATCH --job-name=autotrain
 #SBATCH --time=06:00:00
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
@@ -23,5 +23,4 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------------------------'
 echo -e '\n\n'
 
-# bash fl-dpo.sh
-bash merge.sh
+bash run.sh
