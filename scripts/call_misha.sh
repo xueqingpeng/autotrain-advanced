@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #SBATCH --job-name=autotrain
-#SBATCH --time=06:00:00
+#SBATCH --time=24:00:00
 #SBATCH --partition=gpu
 #SBATCH --nodes=1
-#SBATCH --gpus=1
+#SBATCH --gpus=2
 #SBATCH --constraint="h100"
-#SBATCH --mem=64G
+#SBATCH --mem=128G
 #SBATCH --mail-type=ALL
 #SBATCH --output=/home/xp83/Documents/project/logs/%j_gpu.out
 

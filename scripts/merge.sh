@@ -26,5 +26,5 @@
 # fino1
 autotrain tools merge-llm-adapter \
     --base-model-path TheFinAI/Fino1-8B \
-    --adapter-path TheFinAI/Fino1-8B-dpo-qlora \
+    --adapter-path TheFinAI/Fino1-8B-dpo-qlora2 \
     --push-to-hub
