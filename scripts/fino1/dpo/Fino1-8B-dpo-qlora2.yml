@@ -1,5 +1,5 @@
 task: llm-dpo
-base_model: TheFinAI/Fino1-8B
+base_model: TheFinAI/Fino1-8B_v2
 project_name: Fino1-8B-dpo-qlora2
 log: tensorboard
 backend: local
@@ -20,7 +20,7 @@ params:
         max_prompt_length: 15000
         epochs: 3
         batch_size: 2
-        lr: 3e-6
+        lr: 1e-6
         peft: true
         quantization: int4
         target_modules: all-linear
