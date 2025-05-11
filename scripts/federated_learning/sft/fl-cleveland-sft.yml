@@ -1,11 +1,11 @@
 task: llm-sft
 base_model: Qwen/Qwen2.5-3B
-project_name: fl-cleveland-sft-2
+project_name: fl-cleveland-sft-0
 log: tensorboard
 backend: local
 
 data:
-  path: TheFinAI/MED_SYN2_CLEVELAND_train
+  path: TheFinAI/MED_SYN0_CLEVELAND_train
   train_split: train
   valid_split: null
   chat_template: tokenizer

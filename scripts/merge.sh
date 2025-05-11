@@ -11,15 +11,10 @@
 #     --adapter-path TheFinAI/fl-hungarian-dpo-qlora \
 #     --push-to-hub
 
-# autotrain tools merge-llm-adapter \
-#     --base-model-path wendy416/llama32-3b-sft_syn_diabetes \
-#     --adapter-path TheFinAI/fl-switzerland-dpo-qlora \
-#     --push-to-hub
-
-# autotrain tools merge-llm-adapter \
-#     --base-model-path wendy416/llama32-3b-sft_syn_diabetes \
-#     --adapter-path TheFinAI/fl-va-dpo-qlora \
-#     --push-to-hub
+autotrain tools merge-llm-adapter \
+    --base-model-path wendy416/llama32-3b-sft_syn_diabetes \
+    --adapter-path TheFinAI/fl-switzerland-dpo-qlora \
+    --push-to-hub
 
 
 
@@ -31,8 +26,8 @@
 
 
 
-# es
-autotrain tools merge-llm-adapter \
-    --base-model-path meta-llama/Llama-2-7b-hf \
-    --adapter-path TheFinAI/FinMA-ES-Bilingual \
-    --push-to-hub
+# # es
+# autotrain tools merge-llm-adapter \
+#     --base-model-path meta-llama/Llama-2-7b-hf \
+#     --adapter-path TheFinAI/FinMA-ES-Bilingual \
+#     --push-to-hub

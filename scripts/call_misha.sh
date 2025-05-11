@@ -11,7 +11,7 @@
 #SBATCH --output=/home/xp83/Documents/project/logs/%j_gpu.out
 
 module load miniconda
-conda activate autotrain
+conda activate /gpfs/radev/home/xp83/project/env/autotrain2
 
 echo '-------------------------------------------------'
 echo "Job Name: ${SLURM_JOB_NAME}"
@@ -22,5 +22,9 @@ echo Time is $(date)
 echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------------------------'
 echo -e '\n\n'
+
+export HF_HOME='/gpfs/radev/home/xp83/project/hf_cache'
+export HF_MODELS_CACHE='/gpfs/radev/home/xp83/project/hf_cache/saved_models'
+export HF_DATASETS_CACHE='/gpfs/radev/home/xp83/project/hf_cache/saved_datasets'
 
 bash run.sh

@@ -40,11 +40,11 @@ def data_convert(fp_in, fp_out):
     return df
 
 
-dir = "/home/xpeng3/SynFed/syned_datasets/syn1_dpo"
-for df_name in ["cleveland", "hungarian", "switzerland", "va"]:
+dir = "/gpfs/radev/home/xp83/Documents/project/scripts/SynFed/syned_datasets/syn1_dpo"
+for df_name in ["cleveland", "hungarian", "switzerland"]:
     # data convert
     fp_in = os.path.join(dir, f"{df_name}/{df_name}.pref.jsonl")
-    fp_out = os.path.join(dir, f"{df_name}.jsonl")
+    fp_out = os.path.join(dir, f"{df_name}_autotrain.jsonl")
     df = data_convert(fp_in, fp_out)
 
     # upload to huggingface
