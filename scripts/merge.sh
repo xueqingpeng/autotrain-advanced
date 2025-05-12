@@ -20,17 +20,17 @@
 # sft
 autotrain tools merge-llm-adapter \
     --base-model-path Qwen/Qwen2.5-3B \
-    --adapter-path TheFinAI/fl-cleveland-sft-2 \
+    --adapter-path TheFinAI/fl-cleveland-sft-2-adapter \
     --push-to-hub
 
 autotrain tools merge-llm-adapter \
     --base-model-path Qwen/Qwen2.5-3B \
-    --adapter-path TheFinAI/fl-hungarian-sft-2 \
+    --adapter-path TheFinAI/fl-hungarian-sft-2-adapter \
     --push-to-hub
 
 autotrain tools merge-llm-adapter \
     --base-model-path Qwen/Qwen2.5-3B \
-    --adapter-path TheFinAI/fl-switzerland-sft-2 \
+    --adapter-path TheFinAI/fl-switzerland-sft-2-adapter \
     --push-to-hub
 
 

@@ -1,6 +1,6 @@
 task: llm-sft
 base_model: Qwen/Qwen2.5-3B
-project_name: fl-cleveland-sft-2
+project_name: fl-cleveland-sft-2-adapter
 log: tensorboard
 backend: local
 
@@ -29,7 +29,7 @@ params:
   scheduler: cosine
   gradient_accumulation: 4
   mixed_precision: bf16
-  merge_adapter: true
+  merge_adapter: false
 
 hub:
   username: ${HF_USERNAME}
