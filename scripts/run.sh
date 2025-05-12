@@ -5,7 +5,7 @@ echo "HF_USERNAME: $HF_USERNAME"
 echo "HF_TOKEN: $HF_TOKEN" | cut -c1-20
 
 export VLLM_WORKER_MULTIPROC_METHOD="spawn"
-export CUDA_VISIBLE_DEVICES=0
+export CUDA_VISIBLE_DEVICES=0,1
 
 # python federated_learning/dpo/data_convert.py
 # autotrain --config federated_learning/dpo/fl-cleveland-dpo-qlora.yml
