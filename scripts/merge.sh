@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # # federated_learning
+# # dpo
 # autotrain tools merge-llm-adapter \
 #     --base-model-path wendy416/llama32-3b-sft_syn_diabetes \
 #     --adapter-path TheFinAI/fl-cleveland-dpo-qlora \
@@ -11,9 +12,25 @@
 #     --adapter-path TheFinAI/fl-hungarian-dpo-qlora \
 #     --push-to-hub
 
+# autotrain tools merge-llm-adapter \
+#     --base-model-path wendy416/llama32-3b-sft_syn_diabetes \
+#     --adapter-path TheFinAI/fl-switzerland-dpo-qlora-b \
+#     --push-to-hub
+
+# sft
 autotrain tools merge-llm-adapter \
-    --base-model-path wendy416/llama32-3b-sft_syn_diabetes \
-    --adapter-path TheFinAI/fl-switzerland-dpo-qlora \
+    --base-model-path Qwen/Qwen2.5-3B \
+    --adapter-path TheFinAI/fl-cleveland-sft-2 \
+    --push-to-hub
+
+autotrain tools merge-llm-adapter \
+    --base-model-path Qwen/Qwen2.5-3B \
+    --adapter-path TheFinAI/fl-hungarian-sft-2 \
+    --push-to-hub
+
+autotrain tools merge-llm-adapter \
+    --base-model-path Qwen/Qwen2.5-3B \
+    --adapter-path TheFinAI/fl-switzerland-sft-2 \
     --push-to-hub
 
 
