@@ -23,8 +23,6 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------------------------'
 echo -e '\n\n'
 
-export HF_HOME='/gpfs/radev/home/xp83/project/hf_cache'
-export HF_MODELS_CACHE='/gpfs/radev/home/xp83/project/hf_cache/saved_models'
-export HF_DATASETS_CACHE='/gpfs/radev/home/xp83/project/hf_cache/saved_datasets'
+export HF_HOME=/gpfs/radev/scratch/xu_hua/shared/hf_models
 
 bash run.sh
