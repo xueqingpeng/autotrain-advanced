@@ -13,14 +13,18 @@
 module load miniconda
 conda activate /gpfs/radev/home/xp83/project/env/autotrain2
 
-echo '-------------------------------------------------'
-echo "Job Name: ${SLURM_JOB_NAME}"
-echo "I have ${SLURM_CPUS_ON_NODE} CPUs on node $(hostname -s) on partition ${SLURM_JOB_PARTITION}"
-echo ${SLURM_SUBMIT_DIR}
-echo Running on host $(hostname)
-echo Time is $(date)
-echo SLURM_NODES are $(echo ${SLURM_NODELIST})
-echo '-------------------------------------------------'
+echo '---------------------------------------------------------------------------'
+echo "Job Name              : ${SLURM_JOB_NAME}"
+echo "Running on Host       : $(hostname)"
+echo "Partition             : ${SLURM_JOB_PARTITION}"
+echo "CPUs on Node          : ${SLURM_CPUS_ON_NODE}"
+echo "GPUs on Node          : ${SLURM_GPUS_ON_NODE:-0}"
+echo "CUDA_VISIBLE_DEVICES  : ${CUDA_VISIBLE_DEVICES:-None}"
+echo "Environment Name      : ${CONDA_DEFAULT_ENV:-Not Set}"
+echo "Node List             : ${SLURM_NODELIST}"
+echo "Submit Directory      : ${SLURM_SUBMIT_DIR}"
+echo "Start Time            : $(date)"
+echo '---------------------------------------------------------------------------'
 echo -e '\n\n'
 
 export HF_HOME=/gpfs/radev/scratch/xu_hua/shared/hf_models
