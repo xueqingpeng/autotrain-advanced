@@ -3,6 +3,8 @@
 source .env
 echo "HF_USERNAME: $HF_USERNAME"
 echo "HF_TOKEN: $HF_TOKEN" | cut -c1-20
+echo "WANDB_ENTITY: $WANDB_ENTITY"
+echo "WANDB_API_KEY: $WANDB_API_KEY" | cut -c1-20
 
 export VLLM_WORKER_MULTIPROC_METHOD="spawn"
 export CUDA_VISIBLE_DEVICES=0,1

@@ -1,8 +1,13 @@
 task: llm-sft
 base_model: Qwen/Qwen2.5-3B
 project_name: fl-hungarian-sft-1-bottom20
-log: tensorboard
+log: all
 backend: local
+
+wandb:
+  run_name: fl-hungarian-sft-1-bottom20
+  log_model: true
+  tags: ["federated-learning", "sft", "hungarian", "bottom20"]
 
 data:
   path: TheFinAI/MED_SYN1_HUNGARIAN_BOTTOM_train
@@ -15,7 +20,7 @@ data:
 params:
   block_size: 256
   model_max_length: 42000
-  epochs: 1
+  epochs: 250
   batch_size: 1
   lr: 0.0005
   peft: true
