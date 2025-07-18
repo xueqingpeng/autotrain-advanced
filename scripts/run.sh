@@ -21,6 +21,10 @@ export CUDA_VISIBLE_DEVICES=0,1
 # autotrain --config federated_learning/sft/fl-va-sft.yml
 # bash merge.sh
 
+# autotrain --config federated_learning/sft/testing/fl-cleveland-sft-success.yml
+# autotrain --config federated_learning/sft/testing/fl-hungarian-sft-success.yml
+# autotrain --config federated_learning/sft/testing/fl-switzerland-sft-success.yml
+
 # autotrain --config federated_learning/sft/testing/fl-cleveland-sft-top.yml
 # autotrain --config federated_learning/sft/testing/fl-hungarian-sft-top.yml
 # autotrain --config federated_learning/sft/testing/fl-switzerland-sft-top.yml

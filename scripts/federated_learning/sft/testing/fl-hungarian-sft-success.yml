@@ -1,16 +1,16 @@
 task: llm-sft
-base_model: TheFinAI/fl-hungarian-sft-1-adapter
-project_name: fl-hungarian-sft-2-adapter
+base_model: Qwen/Qwen2.5-3B
+project_name: fl-hungarian-sft-1-success
 log: all
 backend: local
 
 wandb:
-  run_name: fl-hungarian-sft-2-adapter
+  run_name: fl-hungarian-sft-1-success
   log_model: true
-  tags: ["federated-learning", "sft", "hungarian"]
+  tags: ["federated-learning", "sft", "hungarian", "success"]
 
 data:
-  path: TheFinAI/MED_SYN2_HUNGARIAN_train
+  path: TheFinAI/MED_SYN1_HUNGARIAN_SUCCESS_train
   train_split: train
   valid_split: null
   chat_template: tokenizer
@@ -20,7 +20,7 @@ data:
 params:
   block_size: 256
   model_max_length: 42000
-  epochs: 1
+  epochs: 50
   batch_size: 1
   lr: 0.0005
   peft: true
@@ -34,7 +34,7 @@ params:
   scheduler: cosine
   gradient_accumulation: 4
   mixed_precision: bf16
-  merge_adapter: false
+  merge_adapter: true
 
 hub:
   username: ${HF_USERNAME}
