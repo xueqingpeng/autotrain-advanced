@@ -1,16 +1,16 @@
 task: llm-sft
-base_model: TheFinAI/fl-hungarian-sft-1-adapter
-project_name: fl-hungarian-sft-2-adapter
+base_model: Qwen/Qwen2.5-3B
+project_name: fl-hungarian-sft-1-adapter
 log: all
 backend: local
 
 wandb:
-  run_name: fl-hungarian-sft-2-adapter
+  run_name: fl-hungarian-sft-1-adapter
   log_model: true
   tags: ["federated-learning", "sft", "hungarian"]
 
 data:
-  path: TheFinAI/MED_SYN2_HUNGARIAN_train
+  path: TheFinAI/MED_SYN1_HUNGARIAN_train
   train_split: train
   valid_split: null
   chat_template: tokenizer
@@ -20,8 +20,8 @@ data:
 params:
   block_size: 256
   model_max_length: 42000
-  epochs: 1
-  batch_size: 1
+  epochs: 12
+  batch_size: 8
   lr: 0.0005
   peft: true
   lora_r: 16
