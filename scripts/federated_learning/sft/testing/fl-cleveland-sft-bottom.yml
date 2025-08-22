@@ -10,7 +10,7 @@ wandb:
   tags: ["federated-learning", "sft", "cleveland", "bottom20"]
 
 data:
-  path: TheFinAI/MED_SYN1_CLEVELAND_BOTTOM_train
+  path: TheFinAI/MED_SYN1_CLEVELAND_train_bottom20
   train_split: train
   valid_split: null
   chat_template: tokenizer
