@@ -26,8 +26,13 @@ export CUDA_VISIBLE_DEVICES=0,1
 # autotrain --config federated_learning/sft/scoring/fl-cleveland-sft-1-2.yml
 # autotrain --config federated_learning/sft/scoring/fl-cleveland-sft-1-3.yml
 # autotrain --config federated_learning/sft/scoring/fl-cleveland-sft-1-4.yml
-autotrain --config federated_learning/sft/testing/fl-cleveland-sft-top.yml
-autotrain --config federated_learning/sft/testing/fl-cleveland-sft-bottom.yml
+# autotrain --config federated_learning/sft/scoring/fl-cleveland-sft-1-5.yml
+# autotrain --config federated_learning/sft/scoring/fl-cleveland-sft-1-6.yml
+# autotrain --config federated_learning/sft/scoring/fl-cleveland-sft-1-7.yml
+# autotrain --config federated_learning/sft/scoring/fl-cleveland-sft-1-8.yml
+# autotrain --config federated_learning/sft/scoring/fl-cleveland-sft-1-9.yml
+# autotrain --config federated_learning/sft/testing/fl-cleveland-sft-top.yml
+# autotrain --config federated_learning/sft/testing/fl-cleveland-sft-bottom.yml
 
 # autotrain --config fino1/dpo/Fino1-8B-dpo-qlora2.yml
 # bash merge.sh

@@ -1,11 +1,11 @@
 task: llm-sft
 base_model: Qwen/Qwen2.5-3B
-project_name: fl-cleveland-sft-1-0-adapter
+project_name: fl-cleveland-sft-1-0
 log: all
 backend: local
 
 wandb:
-  run_name: fl-cleveland-sft-1-0-adapter
+  run_name: fl-cleveland-sft-1-0
   log_model: true
   tags: ["federated-learning", "sft", "cleveland"]
 
