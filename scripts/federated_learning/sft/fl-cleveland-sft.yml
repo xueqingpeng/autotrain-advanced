@@ -1,16 +1,16 @@
 task: llm-sft
 base_model: Qwen/Qwen2.5-3B
-project_name: fl-cleveland-sft-1-adapter
+project_name: fl-cleveland-sft-2-adapter
 log: all
 backend: local
 
 wandb:
-  run_name: fl-cleveland-sft-1-adapter
+  run_name: fl-cleveland-sft-2-adapter
   log_model: true
   tags: ["federated-learning", "sft", "cleveland"]
 
 data:
-  path: TheFinAI/MED_SYN1_CLEVELAND_train
+  path: TheFinAI/MED_SYN2_CLEVELAND_train
   train_split: train
   valid_split: null
   chat_template: tokenizer
@@ -20,7 +20,7 @@ data:
 params:
   block_size: 256
   model_max_length: 42000
-  epochs: 12
+  epochs: 50
   batch_size: 8
   lr: 0.0005
   peft: true

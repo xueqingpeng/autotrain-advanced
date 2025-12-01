@@ -1,5 +1,5 @@
 task: llm-sft
-base_model: Qwen/Qwen3-4B-Instruct-2507s
+base_model: Qwen/Qwen3-4B-Instruct-2507
 project_name: abs-data-sft
 log: all
 backend: local
@@ -15,7 +15,7 @@ data:
   valid_split: null
   chat_template: tokenizer
   column_mapping:
-    text_column: conversations
+    text_column: entries
 
 params:
   block_size: 256
