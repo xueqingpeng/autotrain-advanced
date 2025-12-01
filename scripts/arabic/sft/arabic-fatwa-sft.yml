@@ -1,0 +1,42 @@
+task: llm-sft
+base_model: humain-ai/ALLaM-7B-Instruct-preview
+project_name: arabic-fatwa-sft
+log: all
+backend: local
+
+wandb:
+  run_name: arabic-fatwa-sft
+  log_model: true
+  tags: ["arabic", "sft", "fatwa"]
+
+data:
+  path: SahmBenchmark/fatwa-training_standardized_formatted
+  train_split: train
+  valid_split: null
+  chat_template: tokenizer
+  column_mapping:
+    text_column: conversations
+
+params:
+  block_size: 256
+  model_max_length: 42000
+  epochs: 50
+  batch_size: 8
+  lr: 0.0005
+  peft: true
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0
+  quantization: int4
+  target_modules: all-linear
+  padding: right
+  optimizer: adamw_torch
+  scheduler: cosine
+  gradient_accumulation: 4
+  mixed_precision: bf16
+  merge_adapter: true
+
+hub:
+  username: SahmBenchmark
+  token: ${HF_TOKEN}
+  push_to_hub: true

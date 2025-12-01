@@ -34,5 +34,16 @@ export CUDA_VISIBLE_DEVICES=0,1
 # autotrain --config federated_learning/sft/testing/fl-cleveland-sft-top.yml
 # autotrain --config federated_learning/sft/testing/fl-cleveland-sft-bottom.yml
 
+# autotrain --config arabic/sft/arabic-afqa-sft.yml
+# autotrain --config arabic/sft/arabic-fatwa-sft.yml
+# autotrain --config arabic/sft/arabic-ifqa-sft.yml
+# autotrain --config arabic/sft/arabic-fres-sft.yml
+# autotrain --config arabic/sft/arabic-ac-sft.yml
+# autotrain --config arabic/sft/arabic-sa-sft.yml
+# autotrain --config arabic/sft/arabic-bu-sft.yml
+# autotrain --config arabic/sft/arabic-merged-sft.yml
+
 # autotrain --config fino1/dpo/Fino1-8B-dpo-qlora2.yml
 # bash merge.sh
+
+autotrain --config xulab/sft/abs-data-sft.yml

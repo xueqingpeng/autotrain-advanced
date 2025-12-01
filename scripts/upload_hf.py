@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-简化的模型上传脚本 - 上传 fl-cleveland-sft-1-1-adapter 到 HuggingFace
+简化的模型上传脚本
 """
 
 import os
 from huggingface_hub import HfApi
 
 # 配置
-MODEL_PATH = "/gpfs/radev/home/xp83/Documents/project/scripts/autotrain-advanced/scripts/fl-cleveland-sft-1-1-adapter"
-REPO_ID = "TheFinAI/fl-cleveland-sft-1-1-adapter"
+MODEL_PATH = "/gpfs/radev/home/xp83/Documents/project/scripts/autotrain-advanced/scripts/arabic-merged-sft"
+REPO_ID = "SahmBenchmark/arabic-merged-sft"
 
 def main():
     print(f"上传模型: {MODEL_PATH}")
