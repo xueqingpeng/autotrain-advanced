@@ -1,13 +1,13 @@
 task: llm-sft
 base_model: Qwen/Qwen3-4B-Instruct-2507
-project_name: abs-data-sft
+project_name: abs-data-4b-sft
 log: all
 backend: local
 
 wandb:
-  run_name: abs-data-sft
+  run_name: abs-data-4b-sft
   log_model: true
-  tags: ["abstract", "data", "xulab"]
+  tags: ["abstract", "data", "xulab", "qwen3-4b", "sft"]
 
 data:
   path: clinicalnlplab/ABS_DATA_train

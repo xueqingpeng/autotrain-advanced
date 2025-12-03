@@ -46,4 +46,5 @@ export CUDA_VISIBLE_DEVICES=0,1
 # autotrain --config fino1/dpo/Fino1-8B-dpo-qlora2.yml
 # bash merge.sh
 
-autotrain --config xulab/sft/abs-data-sft.yml
+autotrain --config xulab/sft/abs-data-4b-sft.yml
+autotrain --config xulab/sft/abs-data-14b-sft.yml
